@@ -1,0 +1,25 @@
+.table-view {
+    -fx-background-color: transparent;
+    -fx-background-radius:10;
+    -fx-font-size:14;
+    -fx-border-radius:10;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell {
+    -fx-alignment: left;
+}
+
+.table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, #2b2a2a;
+    -fx-background-insets: 0, 0 0 1 0;
+}
+
+.table-row-cell:focused {
+    -fx-text-fill: #000000;
+    -fx-background-color: rgba(157, 0, 0, 0.20);
+    -fx-background-insets: 0;
+}

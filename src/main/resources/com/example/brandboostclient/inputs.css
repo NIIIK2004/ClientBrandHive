@@ -1,0 +1,11 @@
+DatePicker, TextField {
+    -fx-border-radius: 5;
+    -fx-border-color: #F26419;
+    -fx-font-size: 16;
+}
+ComboBox      {
+    -fx-border-radius: 5;
+    -fx-border-color: #F26419;
+    -fx-font-size: 16;
+    -fx-background-color: transparent;
+}
