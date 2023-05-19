@@ -33,13 +33,13 @@ public class EditServicesController {
     void saveServices(ActionEvent event) throws IOException {
         if(services != null) {
             String priceText = priceField.getText();
-            if (!nameField.getText().matches("^[А-яA-Za-z]{2,100}$") || nameField.getText().isEmpty()) {
+            if (!nameField.getText().matches("^[А-яA-Za-z\\s]{2,100}$") || nameField.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Ошибка ввода данных");
                 alert.setHeaderText(null);
                 alert.setContentText("Название услуги должна быть от 2 до 100 символов и содержать только латинские буквы, кириллицу! В названии услуги должно быть от 2 до 100 символов! Название услуги не может быть пустым!");
                 alert.showAndWait();
-            } else if (!descriptionField.getText().matches("^[А-яA-Za-z]{2,2000}$") || descriptionField.getText().isEmpty()) {
+            } else if (!descriptionField.getText().matches("^[А-яA-Za-z\\s]{2,2000}$") || descriptionField.getText().isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Ошибка ввода данных");
                 alert.setHeaderText(null);
