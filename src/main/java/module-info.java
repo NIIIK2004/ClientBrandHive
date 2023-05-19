@@ -4,8 +4,9 @@ module com.example.brandboostclient {
     requires static lombok;
     requires okhttp3;
     requires com.google.gson;
-            
-                            
+    requires java.desktop;
+
+
     opens com.example.brandboostclient.controller to javafx.fxml;
     exports com.example.brandboostclient;
     exports com.example.brandboostclient.model;

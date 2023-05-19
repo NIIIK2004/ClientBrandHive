@@ -13,6 +13,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -21,6 +24,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -313,5 +318,19 @@ public class UserController {
         String query = searchField.getText();
         new UserService().search(query);
         tUser.setItems(data);
+    }
+
+    @FXML
+    void updateOpenClientPage(ActionEvent event) throws IOException {
+//        MenuItem menuItem = (MenuItem) event.getSource();
+//        Scene scene = menuItem.getParentPopup().getOwnerWindow().getScene();
+//        openClientPage(scene);
+
+        try {
+            File htmlFile = new File("src/main/resources/com/example/brandboostclient/update8_1_1.html");
+            Desktop.getDesktop().browse(htmlFile.toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -26,8 +26,11 @@
                         <MenuItem fx:id="openOrderPage" mnemonicParsing="false" onAction="#openOrderPage" text="Заказы" />
                      </items>
                   </Menu>
-      <!--            <Menu mnemonicParsing="false" text="О программе" />-->
-      <!--            <Menu mnemonicParsing="false" text="Помощь" />-->
+                  <Menu mnemonicParsing="false" text="О программе">
+                     <items>
+                        <MenuItem fx:id="" mnemonicParsing="false" onAction="#updateOpenClientPage" text="В обновлении 8.1.1"/>
+                     </items>
+                  </Menu>
                   <Menu mnemonicParsing="false" text="Прочее">
                      <items>
                         <MenuItem fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutButton" text="Выход" />

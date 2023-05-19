@@ -2,10 +2,7 @@ package com.example.brandboostclient.controller;
 
 import com.example.brandboostclient.BrandBoostApplication;
 import com.example.brandboostclient.model.Client;
-import com.example.brandboostclient.model.Role;
-import com.example.brandboostclient.model.User;
 import com.example.brandboostclient.service.ClientService;
-import com.example.brandboostclient.service.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,11 +10,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -115,6 +117,21 @@ public class ClientController {
         MenuItem menuItem = (MenuItem) event.getSource();
         Scene scene = menuItem.getParentPopup().getOwnerWindow().getScene();
         openClientPage(scene);
+    }
+
+
+    @FXML
+    void updateOpenClientPage(ActionEvent event) throws IOException {
+//        MenuItem menuItem = (MenuItem) event.getSource();
+//        Scene scene = menuItem.getParentPopup().getOwnerWindow().getScene();
+//        openClientPage(scene);
+
+        try {
+            File htmlFile = new File("src/main/resources/com/example/brandboostclient/update8_1_1.html");
+            Desktop.getDesktop().browse(htmlFile.toURI());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void openClientPage(Scene scene) throws IOException {
@@ -265,14 +282,13 @@ public class ClientController {
     @FXML
     public void initialize() throws IOException {
         loadData();
-        if (AuthController.userRole.equals("Администратор")){
+        if (AuthController.userRole.equals("Администратор")) {
             addClientButton.setVisible(true);
             deleteModalClient.setVisible(true);
             openEditModalClient.setVisible(true);
             openUserPage.setVisible(true);
             ;
-        }
-        else {
+        } else {
             addClientButton.setVisible(false);
             deleteModalClient.setVisible(false);
             openEditModalClient.setVisible(false);
